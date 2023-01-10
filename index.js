@@ -87,15 +87,30 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
-//The total number of months included in the data set
-
-document.write("Total Months: " + finances.length);
+//The total number of months in console
+let months = finances.length;
 
 //The net total amount of profit/losses over the entire period
-
+let total = 0;
+for(i=0; i<finances.length; i++){
+  total+=(finances[i][1])
+}
 
 //The average of the changes in Profit/Losses over the etnire period
 
 // The greatest increase in profits over the entire period
 
 // The greatest increase in losses over the entire period
+
+
+//Print-Console
+
+console.log(`
+Financial Analysis
+--------------------
+Total Months= ${months}`);
+console.log(`Total= $${total}`);
+
+
+
+
