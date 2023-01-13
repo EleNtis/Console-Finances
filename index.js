@@ -95,8 +95,26 @@ let total = 0;
 for(i=0; i<finances.length; i++){
   total+=(finances[i][1])
 }
+//The average change of profits for the entire period
+let totalChange= 0;
+let change=0;
+let net= 0;
+let averageChange=0;
+//for the change of profits from month to month 
+for(i=0; i<finances.length; i++){
+change= (finances[i][1] - net)
+ net= finances[i][1]
+ if(change===finances[i][1]){
+  continue;
+}
+//for the total change
+ totalChange+=(change);
+ 
+} 
+//to find the number of changes
+//for the average of the change
 
-//The average of the changes in Profit/Losses over the etnire period
+
 
 // The greatest increase in profits over the entire period
 
