@@ -93,7 +93,7 @@ let months = finances.length;
 //The net total amount of profit/losses over the entire period
 let total = 0;
 for(i=0; i<finances.length; i++){
-  total+=(finances[i][1])
+  total+= (finances[i][1])
 }
 //The average change of profits for the entire period
 let totalChange= 0;
@@ -141,7 +141,6 @@ for(i=0; i<finances.length; i++){
   previousGreatestDecrease= (profitChange)
 }
 }
-
 
 //Print-Console
 
