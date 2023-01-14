@@ -133,12 +133,12 @@ for(i=0; i<finances.length; i++){
   profitChange= (finances[i][1] - netChange) 
   netChange = finances[i][1]
   if (profitChange > previousGreatestIncrease) {
-    greatestIncrease=profitChange
-    previousGreatestIncrease= (profitChange)
+    greatestIncrease= finances[i][0] +("  $") + (profitChange)
+    previousGreatestIncrease= (profitChange)        
 } 
   if(profitChange < previousGreatestDecrease){
-  greatestDecrease=profitChange
-  previousGreatestDecrease=(profitChange)
+  greatestDecrease= finances[i][0] + ("  $") + (profitChange)
+  previousGreatestDecrease= (profitChange)
 }
 }
 
@@ -151,4 +151,5 @@ Financial Analysis
 Total Months= ${months}`);
 console.log(`Total= $${total}`);
 console.log(`Average Change= $${averageChange}`);
-console.log(`Greatest Increase in Profits= $${greatestIncrease}`)
+console.log(`Greatest Increase in Profits= ${greatestIncrease}`)
+console.log(`Greatest Decrease in Profits= ${greatestDecrease}`)
