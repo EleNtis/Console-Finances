@@ -26,4 +26,4 @@ The console shows the following information:
 N/A
 
 ## License
-Please refer to the lICENSE in the repo
+Please refer to the LICENSE in the repo
