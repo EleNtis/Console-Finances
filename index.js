@@ -99,11 +99,12 @@ for(i=0; i<finances.length; i++){
 let totalChange= 0;
 let change=0;
 let net= 0;
-let averageChange=0;
+let averageChange= 0;
 //for the change of profits from month to month 
 for(i=0; i<finances.length; i++){
 change= (finances[i][1] - net)
  net= finances[i][1]
+ //to skip the 1 month
  if(change===finances[i][1]){
   continue;
 }
@@ -112,11 +113,16 @@ change= (finances[i][1] - net)
  
 } 
 //to find the number of changes
+let changesNumber= finances.length -1
 //for the average of the change
+averageChange= (totalChange / changesNumber);
 
-
+//to round the result
+let roundChange = Math.round(100 * averageChange) / 100 ; 
+averageChange = roundChange;
 
 // The greatest increase in profits over the entire period
+
 
 // The greatest increase in losses over the entire period
 
@@ -125,9 +131,10 @@ change= (finances[i][1] - net)
 
 console.log(`
 Financial Analysis
---------------------
+-------------------
 Total Months= ${months}`);
 console.log(`Total= $${total}`);
+console.log(`Average Change= $${averageChange}`);
 
 
 
