@@ -121,24 +121,26 @@ averageChange= (totalChange / changesNumber);
 let roundChange = Math.round(100 * averageChange) / 100 ; 
 averageChange = roundChange;
 
-// The greatest increase in profits over the entire period
+// The greatest increase and decrease in profits over the entire period
 let profitChange = 0;
 let netChange= 0;
 let greatestIncrease = 0;
-let greatesDecrease = 0;
-let previousProfitChange = 0;
+let greatestDecrease = 0;
+let previousGreatestDecrease = 0;
+let previousGreatestIncrease = 0;
 
 for(i=0; i<finances.length; i++){
   profitChange= (finances[i][1] - netChange) 
   netChange = finances[i][1]
-  if (profitChange > previousProfitChange) {
+  if (profitChange > previousGreatestIncrease) {
     greatestIncrease=profitChange
-    previousProfitChange= (profitChange)
+    previousGreatestIncrease= (profitChange)
 } 
+  if(profitChange < previousGreatestDecrease){
+  greatestDecrease=profitChange
+  previousGreatestDecrease=(profitChange)
 }
-console.log(greatestIncrease);
-
-// The greatest increase in losses over the entire period
+}
 
 
 //Print-Console
@@ -149,3 +151,4 @@ Financial Analysis
 Total Months= ${months}`);
 console.log(`Total= $${total}`);
 console.log(`Average Change= $${averageChange}`);
+console.log(`Greatest Increase in Profits= $${greatestIncrease}`)
